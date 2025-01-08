@@ -13,17 +13,15 @@ const ContactList = () => {
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
 
-  return (
-    <ul className={css.contactList}>
-      {filteredContacts.length === 0 ? (
-        <li>No contacts</li>
-      ) : (
-        filteredContacts.map((contact) => (
+return (
+  <ul className={css.contactList}>
+    {filteredContacts.length === 0
+      ? null
+      : filteredContacts.map((contact) => (
           <Contact key={contact.id} contact={contact} />
-        ))
-      )}
-    </ul>
-  );
+        ))}
+  </ul>
+);
 };
 
 export default ContactList;
